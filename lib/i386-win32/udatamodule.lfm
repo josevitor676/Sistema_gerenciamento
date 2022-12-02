@@ -1,0 +1,347 @@
+object DataModuleF: TDataModuleF
+  OldCreateOrder = False
+  Height = 398
+  HorizontalOffset = 278
+  VerticalOffset = 127
+  Width = 527
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 5432
+    Database = 'postgres'
+    User = 'postgres'
+    Password = '12345'
+    Protocol = 'postgresql'
+    Left = 44
+    Top = 32
+  end
+  object QRYCientes: TZQuery
+    Connection = ZConnection1
+    UpdateObject = UpdateClientes
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM clientes_app'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'pCliente'
+        ParamType = ptUnknown
+      end>
+    Left = 44
+    Top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'pCliente'
+        ParamType = ptUnknown
+      end>
+    object QRYCientesid_cliente: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_cliente'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QRYCientesnome_cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_cliente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object QRYCientestelefone_cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone_cliente'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      EditMask = '(##) #####-####'
+      Size = 14
+    end
+    object QRYCientesdt_cadastro: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'dt_cadastro'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object UpdateClientes: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM clientes_app'
+      'WHERE'
+      '  clientes_app.id_cliente = :OLD_id_cliente'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO clientes_app'
+      '  (id_cliente, nome_cliente, telefone_cliente, dt_cadastro)'
+      'VALUES'
+      '  (:id_cliente, :nome_cliente, :telefone_cliente, :dt_cadastro)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE clientes_app SET'
+      '  id_cliente = :id_cliente,'
+      '  nome_cliente = :nome_cliente,'
+      '  telefone_cliente = :telefone_cliente,'
+      '  dt_cadastro = :dt_cadastro'
+      'WHERE'
+      '  clientes_app.id_cliente = :OLD_id_cliente'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 44
+    Top = 176
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telefone_cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_cadastro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id_cliente'
+        ParamType = ptUnknown
+      end>
+  end
+  object QRYAparelho: TZQuery
+    Connection = ZConnection1
+    UpdateObject = UpdateaAparelho
+    Active = True
+    SQL.Strings = (
+      'select '
+      'id_aparelho,'
+      'id_cliente,'
+      'nome_aparelho,'
+      'marca,'
+      'valor_conserto,'
+      'dt_reparo,'
+      'peca_trocada'
+      'from aparelho'
+      'where id_cliente = :CLIENTE_ID;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pAparelho'
+        ParamType = ptUnknown
+      end>
+    Left = 224
+    Top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pAparelho'
+        ParamType = ptUnknown
+      end>
+    object QRYAparelhoid_aparelho: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_aparelho'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QRYAparelhoid_cliente: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_cliente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QRYAparelhonome_aparelho: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_aparelho'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+    object QRYAparelhomarca: TStringField
+      FieldKind = fkData
+      FieldName = 'marca'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QRYAparelhovalor_conserto: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor_conserto'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 983042
+    end
+    object QRYAparelhodt_reparo: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'dt_reparo'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      EditMask = '##/##/####'
+    end
+    object QRYAparelhopeca_trocada: TStringField
+      FieldKind = fkData
+      FieldName = 'peca_trocada'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+  end
+  object UpdateaAparelho: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM aparelho'
+      'WHERE'
+      '  aparelho.id_aparelho = :OLD_id_aparelho'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO aparelho'
+      '  (id_aparelho, id_cliente, nome_aparelho, marca, valor_conserto, dt_reparo, '
+      '   peca_trocada)'
+      'VALUES'
+      '  (:id_aparelho, :id_cliente, :nome_aparelho, :marca, :valor_conserto, '
+      '   :dt_reparo, :peca_trocada)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE aparelho SET'
+      '  id_aparelho = :id_aparelho,'
+      '  id_cliente = :id_cliente,'
+      '  nome_aparelho = :nome_aparelho,'
+      '  marca = :marca,'
+      '  valor_conserto = :valor_conserto,'
+      '  dt_reparo = :dt_reparo,'
+      '  peca_trocada = :peca_trocada'
+      'WHERE'
+      '  aparelho.id_aparelho = :OLD_id_aparelho'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 224
+    Top = 176
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_aparelho'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id_cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_aparelho'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'marca'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_conserto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_reparo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'peca_trocada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id_aparelho'
+        ParamType = ptUnknown
+      end>
+  end
+  object QRYUsuarios: TZQuery
+    Connection = ZConnection1
+    UpdateObject = UpdateUsuarios
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM USUARIO_APP'
+    )
+    Params = <>
+    Left = 400
+    Top = 104
+  end
+  object UpdateUsuarios: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 400
+    Top = 176
+  end
+  object QRYAparelhosRel: TZQuery
+    Connection = ZConnection1
+    UpdateObject = UpdateAparelhoRel
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM APARELHO'
+    )
+    Params = <>
+    Left = 44
+    Top = 264
+  end
+  object UpdateAparelhoRel: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 44
+    Top = 336
+  end
+end

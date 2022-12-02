@@ -1,0 +1,355 @@
+object FAparelho: TFAparelho
+  Left = 319
+  Height = 458
+  Top = 147
+  Width = 869
+  Caption = 'Cadastrar Aparelho'
+  ClientHeight = 458
+  ClientWidth = 869
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '2.2.2.0'
+  object DBGrid1: TDBGrid
+    Left = 344
+    Height = 348
+    Top = 52
+    Width = 525
+    Align = alRight
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Nome Aparelho'
+        Width = 110
+        FieldName = 'nome_aparelho'
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Marca'
+        Width = 95
+        FieldName = 'marca'
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Valor Conserto'
+        Width = 95
+        FieldName = 'valor_conserto'
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Data Reparo'
+        Width = 95
+        FieldName = 'dt_reparo'
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = ANSI_CHARSET
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Peça Trocada'
+        Width = 95
+        FieldName = 'peca_trocada'
+      end>
+    DataSource = DSAparelho
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 58
+    Top = 400
+    Width = 869
+    Align = alBottom
+    ClientHeight = 58
+    ClientWidth = 869
+    TabOrder = 1
+    object Button1: TButton
+      Left = 207
+      Height = 36
+      Top = 8
+      Width = 120
+      Caption = 'Cadastrar Aparelho'
+      Font.CharSet = ANSI_CHARSET
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = Button1Click
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 39
+      Height = 36
+      Top = 8
+      Width = 104
+      Caption = 'Novo Aparelho'
+      Font.CharSet = ANSI_CHARSET
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = Button2Click
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 712
+      Height = 36
+      Top = 8
+      Width = 120
+      Caption = 'Excluir Aparelho'
+      Font.CharSet = ANSI_CHARSET
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = Button3Click
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object Label2: TLabel
+    Left = 38
+    Height = 15
+    Top = 178
+    Width = 55
+    Caption = 'ID Cliente'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 38
+    Height = 23
+    Top = 202
+    Width = 48
+    DataField = 'id_cliente'
+    DataSource = DSAparelho
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 128
+    Height = 15
+    Top = 178
+    Width = 87
+    Caption = 'Nome Aparelho'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit2: TDBEdit
+    Left = 128
+    Height = 23
+    Top = 202
+    Width = 198
+    DataField = 'nome_aparelho'
+    DataSource = DSAparelho
+    MaxLength = 30
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 38
+    Height = 23
+    Top = 272
+    Width = 130
+    DataField = 'marca'
+    DataSource = DSAparelho
+    MaxLength = 20
+    TabOrder = 4
+  end
+  object Label4: TLabel
+    Left = 38
+    Height = 15
+    Top = 250
+    Width = 34
+    Caption = 'Marca'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 38
+    Height = 15
+    Top = 314
+    Width = 81
+    Caption = 'Valor Conserto'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit4: TDBEdit
+    Left = 38
+    Height = 23
+    Top = 338
+    Width = 130
+    DataField = 'valor_conserto'
+    DataSource = DSAparelho
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Label6: TLabel
+    Left = 196
+    Height = 15
+    Top = 250
+    Width = 69
+    Caption = 'Data Reparo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit5: TDBEdit
+    Left = 196
+    Height = 23
+    Top = 272
+    Width = 130
+    DataField = 'dt_reparo'
+    DataSource = DSAparelho
+    EditMask = '##/##/####'
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object Label7: TLabel
+    Left = 196
+    Height = 15
+    Top = 314
+    Width = 72
+    Caption = 'Peça Trocada'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit6: TDBEdit
+    Left = 196
+    Height = 23
+    Top = 338
+    Width = 130
+    DataField = 'peca_trocada'
+    DataSource = DSAparelho
+    MaxLength = 30
+    TabOrder = 7
+  end
+  object Edit1: TEdit
+    Left = 39
+    Height = 23
+    Top = 96
+    Width = 287
+    TabOrder = 8
+  end
+  object Label8: TLabel
+    Left = 38
+    Height = 20
+    Top = 72
+    Width = 115
+    Caption = 'Buscar Aparelho'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button4: TButton
+    Left = 39
+    Height = 25
+    Top = 128
+    Width = 287
+    Caption = 'Buscar Aparelho'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = Button4Click
+    ParentFont = False
+    TabOrder = 9
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 52
+    Top = 0
+    Width = 869
+    Align = alTop
+    ClientHeight = 52
+    ClientWidth = 869
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+    object Label1: TLabel
+      Left = 24
+      Height = 24
+      Top = 16
+      Width = 182
+      Caption = 'Cadastrar Aparelho'
+      ParentColor = False
+    end
+  end
+  object DSAparelho: TDataSource
+    DataSet = DataModuleF.QRYAparelho
+    Left = 424
+  end
+end

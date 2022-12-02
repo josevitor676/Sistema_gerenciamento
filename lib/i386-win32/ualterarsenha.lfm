@@ -1,0 +1,105 @@
+object FAlterarSenha: TFAlterarSenha
+  Left = 410
+  Height = 338
+  Top = 182
+  Width = 527
+  Caption = 'Alterar Senha'
+  ClientHeight = 338
+  ClientWidth = 527
+  LCLVersion = '2.2.2.0'
+  object Label1: TLabel
+    Left = 174
+    Height = 20
+    Top = 45
+    Width = 54
+    Caption = 'Usuario'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdtNomeUsuario: TEdit
+    Left = 174
+    Height = 23
+    Top = 80
+    Width = 189
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 174
+    Height = 20
+    Top = 113
+    Width = 83
+    Caption = 'Nova Senha'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdtSenhaNova: TEdit
+    Left = 174
+    Height = 23
+    Top = 145
+    Width = 189
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 174
+    Height = 20
+    Top = 184
+    Width = 117
+    Caption = 'Confirmar Senha'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EdtConfirmarSenha: TEdit
+    Left = 176
+    Height = 23
+    Top = 217
+    Width = 192
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 174
+    Height = 25
+    Top = 268
+    Width = 85
+    Caption = 'Mudar Senha'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 288
+    Height = 25
+    Top = 268
+    Width = 75
+    Caption = 'Voltar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = Button2Click
+    ParentFont = False
+    TabOrder = 4
+  end
+end
